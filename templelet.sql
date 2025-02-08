@@ -35,3 +35,36 @@ VALUES
 (8, 1, '건강기능식품'),
 (3, 2, '건강보조식품'),
 (7, 3, '단백질보충제');
+
+INSERT INTO CART (
+    USER_ID,
+    P_ID,
+    PRODUCT_QUANTITY,
+    PRODUCT_PRICE
+) 
+VALUES (
+    1,                          -- USER_ID
+    1,                          -- P_ID
+    2,                          -- 수량
+    70000                       -- 총 가격
+);
+
+-- ORDERS INSERT
+INSERT INTO ORDERS (
+    USER_ID,
+    CART_ID,
+    ORDER_DATE,
+    ORDER_STATUS,
+    ORDER_TOTAL_AMOUNT,
+    ORDER_SHIPPING_COST,
+    ORDER_SHIPPING_REQUEST
+)
+VALUES (
+    1,                          -- USER_ID
+    1,                          -- CART_ID
+    CURRENT_DATE,               -- 주문일자
+    'PENDING',                  -- 주문상태
+    70000,                      -- 총 주문금액
+    3000,                       -- 배송비
+    '문 앞에 놓아주세요'         -- 배송 요청사항
+);
